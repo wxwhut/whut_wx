@@ -1,0 +1,30 @@
+div#rMenu {
+    text-align: left;
+    padding:0 1px 0 1px;
+    width: 180px;
+    position:absolute;
+    display:none;
+}
+div#rMenu ul {
+    padding:0 5px;
+    cursor: pointer;
+    list-style: none outside none;
+    display:none;
+}
+div#rMenu ul li {
+    margin:0;
+    padding:2px 0;
+    background-color: coral;
+    border: 1px solid #000000;
+    text-align: center;
+}
+div#rMenu ul li:hover {
+    background-color: red;
+}
+div#catalog{
+    position: absolute;
+    width: 20%;
+    height: 549px;
+    top: 250px;
+    border: 1px solid #000000;
+}

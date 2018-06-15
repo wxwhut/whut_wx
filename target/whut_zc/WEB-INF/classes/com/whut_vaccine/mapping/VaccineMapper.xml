@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.whut_vaccine.dao.VaccineMapper">
+
+    <resultMap id="vaccine" type="com.whut_vaccine.domain.Vaccine">
+        <id column="id" property="id" />
+        <result column="vaccinename" property="vaccinename" />
+        <result column="makeday" property="makeday" />
+        <result column="keepday" property="keepday" />
+        <result column="price" property="price" />
+        <result column="introduce" property="introduce" />
+        <result column="pnumber" property="pnumber" />
+    </resultMap>
+
+    <select id="selectAll" resultMap="vaccine">
+        SELECT * FROM vaccine
+    </select>
+    <select id="getVaccineChildCount" parameterType="java.lang.Integer"
+            resultType="java.lang.Integer">
+        SELECT pnumber FROM vaccine WHERE id=#{id}
+    </select>
+
+    <select id="selectVaccine" parameterType="java.lang.Integer"
+            resultType="com.whut_vaccine.domain.Vaccine">
+        SELECT * FROM vaccine WHERE id=#{id}
+    </select>
+    <select id="selectVaccineName" parameterType="java.lang.Integer"
+            resultType="java.lang.String">
+        SELECT vaccinename FROM vaccine WHERE id=#{id}
+    </select>
+    <insert id="insertVaccine" parameterType="com.whut_vaccine.domain.Vaccine">
+        INSERT INTO vaccine (id,makeday,keepday,vaccinename,price,introduce,pnumber)
+        VALUES (#{id},#{makeday},#{keepday},#{vaccinename},#{price},#{introduce},#{pnumber})
+    </insert>
+
+    <update id="deleteVaccine" parameterType="com.whut_vaccine.domain.Vaccine">
+        DELETE FROM vaccine
+        where id=#{id}
+    </update>
+</mapper>

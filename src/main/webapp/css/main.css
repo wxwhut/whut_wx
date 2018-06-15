@@ -1,0 +1,88 @@
+.demo{
+    padding: 2em 0;
+    background: #fff;
+}
+a:hover,a:focus{
+    text-decoration: none;
+    outline: none;
+}
+#accordion:before{
+    content: "";
+    width: 1px;
+    height: 80%;
+    background: #550527;
+    position: absolute;
+    top: 20px;
+    left: 24px;
+    bottom: 20px;
+}
+#accordion .panel{
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    margin: 0 0 12px 50px;
+    position: relative;
+}
+#accordion .panel:before{
+    content: "";
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, #688e26 0%,#ff816a 100%);
+    position: absolute;
+    top: 0;
+    left: -2px;
+}
+#accordion .panel-heading{
+    padding: 0;
+    background: #fff;
+    position: relative;
+}
+#accordion .panel-heading:before{
+    content: "";
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+    background: #fff;
+    border: 1px solid #550527;
+    position: absolute;
+    top: 50%;
+    left: -48px;
+    transform: translateY(-50%);
+}
+#accordion .panel-title a{
+    display: block;
+    padding: 15px 55px 15px 30px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #550527;
+    border: none;
+    margin: 0;
+    position: relative;
+}
+#accordion .panel-title a:before,
+#accordion .panel-title a.collapsed:before{
+    content: "\f068";
+    font-family: fontawesome;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 50%;
+    font-size: 15px;
+    font-weight: normal;
+    color: #688e26;
+    text-align: center;
+    border: 1px solid #688e26;
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    transition: all 0.5s ease 0s;
+}
+#accordion .panel-title a.collapsed:before{ content: "\f067"; }
+#accordion .panel-body{
+    padding: 0 30px 15px;
+    border: none;
+    font-size: 14px;
+    color: #305275;
+    line-height: 28px;
+}
